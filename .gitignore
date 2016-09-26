@@ -1,0 +1,7 @@
+# files to ignore
+
+*.pyc
+db.sqlite3
+register/__pycache__/**
+register/migrations/**
+hackaday/__pycache__/**
