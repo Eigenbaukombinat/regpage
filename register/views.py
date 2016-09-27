@@ -17,17 +17,22 @@ def register(request):
     if request.method == 'POST':
         form = AttendeeForm(request.POST)
         if form.is_valid():
-            attendee = Attendee()
-            attendee.firstname = form.cleaned_data['firstname']
-            attendee.lastname = form.cleaned_data['lastname']
-            attendee.email = form.cleaned_data['email']
-            attendee.birthdate = form.cleaned_data['birthdate']
-            attendee.submitted_date = datetime.datetime.now()
-            attendee.save()
             
-            submitted = attendee.submitted_date.ctime()
-            birth = attendee.birthdate.isoformat()
-            message ='Ein neuer Teilnehmer hat sich am ' + submitted + ' angemeldet. Name: ' + attendee.firstname + ' ' + attendee.lastname + ' Email: ' + attendee.email + ' Geburtstag: ' + birth    
+            try:
+               attendee = Attendee.objects.get(email=form.cleaned_data['email'])
+               return HttpResponse('Deine Emailadresse ist bereits registriert!')
+            except: 
+            
+                attendee = Attendee()
+                attendee.firstname = form.cleaned_data['firstname']
+                attendee.lastname = form.cleaned_data['lastname']
+                attendee.email = form.cleaned_data['email']
+                attendee.birthdate = form.cleaned_data['birthdate']
+                attendee.submitted_date = datetime.datetime.now()
+                
+                submitted = attendee.submitted_date.ctime()
+                birth = attendee.birthdate.isoformat()
+                message ='Ein neuer Teilnehmer hat sich am ' + submitted + ' angemeldet. Name: ' + attendee.firstname + ' ' + attendee.lastname + ' Email: ' + attendee.email + ' Geburtstag: ' + birth    
 
             try:
                 send_mail(
@@ -48,7 +53,8 @@ def register(request):
                 return HttpResponse('Invalid header found!')
             except:
                 return HttpResponse('Something went wrong!')
-                           
+            
+            attendee.save()
             return render(request, 'status.html', {'status':'success'})
             
     form = AttendeeForm()
