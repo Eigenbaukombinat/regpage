@@ -3,7 +3,6 @@ from django.core.mail import send_mail, BadHeaderError
 import datetime
 from .models import *
 from .forms import *
-from django.http import HttpResponse
 
 ## mail to send message if someone signed up
 MAIL = 'example@example.com'
@@ -20,7 +19,7 @@ def register(request):
             
             try:
                attendee = Attendee.objects.get(email=form.cleaned_data['email'])
-               return HttpResponse('Deine Emailadresse ist bereits registriert!')
+               return render(request, 'status.html',{'status':'Diese Emailadresse wird bereits verwendet!'})
             except: 
             
                 attendee = Attendee()
@@ -50,9 +49,9 @@ def register(request):
                     fail_silently=False,
                     )
             except BadHeaderError:
-                return HttpResponse('Invalid header found!')
+                return render(request, 'status.html',{'status':'Invalid header found!'})
             except:
-                return HttpResponse('Something went wrong!')
+                return render(request, 'status.html',{'status':'Something went wrong!'})
             
             attendee.save()
             return render(request, 'status.html', {'status':'success'})
