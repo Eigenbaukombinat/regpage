@@ -31,6 +31,15 @@ def register(request):
         attendee.lastname = form.cleaned_data['lastname']
         attendee.email = form.cleaned_data['email']
         attendee.age = form.cleaned_data['age']
+        attendee.coding_einsteiger = form.cleaned_data['coding_einsteiger']
+        attendee.coding_fortgeschritten = form.cleaned_data['coding_fortgeschritten']
+        attendee.medien_bearbeitung = form.cleaned_data['medien_bearbeitung']
+        attendee.linux = form.cleaned_data['linux']
+        attendee.roboter = form.cleaned_data['roboter']
+        attendee.loeten = form.cleaned_data['loeten']
+        attendee.elektronik = form.cleaned_data['elektronik']
+        attendee.wearables = form.cleaned_data['wearables']
+        attendee.freitext =form.cleaned_data['freitext']
         attendee.submitted_date = datetime.datetime.now()
        
         submitted = attendee.submitted_date.ctime()
@@ -64,7 +73,8 @@ Dein Team von {JUNGHACKER} – Programmieren für Kids.
                     fail_silently=False,
                     )
         except:
-            return render(request, 'status.html',{'headline': 'Schwerer Fehler!', 'status':'Es ist etwas schiefgegangen. Bitte versuche es später noch einmal oder melde dich unter info@junghacker.de!'})
+            pass
+            #return render(request, 'status.html',{'headline': 'Schwerer Fehler!', 'status':'Es ist etwas schiefgegangen. Bitte versuche es später noch einmal oder melde dich unter info@junghacker.de!'})
             
         attendee.save()
         return render(request, 'status.html', {'headline': 'Danke fuer deine Anmeldung!', 'status':'Eine Bestätigungsmail wurde an deine E-Mail Adresse geschickt.'})

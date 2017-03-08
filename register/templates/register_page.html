@@ -43,25 +43,123 @@ Um bei unserer Veranstaltung am 25. März 2017 teilnehmen zu können, musst du d
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-					<label>E-Mail Adresse</label>
-                        <div class="form-group">
-                            {{ form.email }}
-                        </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+					           <label>E-Mail Adresse</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-8">
+                                <div class="form-group">
+                                    {{ form.email }}
+                                </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					<label>Dein Alter (am Tag der Veranstaltung)</label>
-				</div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                					<label>Dein Alter</label>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-				<div class="form-group">
-					{{ form.age }}
-				</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8">
+                				<div class="form-group">
+                					{{ form.age }}
+                				</div>
                             </div>
                         </div>
+                        <div class="row alter">
+
+                            <div class="col-sm-12">
+                                <h4>Damit wir uns besser auf die Veranstaltung vorbereiten können, kannst du hier angeben, was dich interessiert und was du schon kannst:</h4>
+
+                            </div>
+                        </div>
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Programmieren (AnfängerIn)</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.coding_einsteiger }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Programmieren (Fortgeschritten)</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.coding_fortgeschritten }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Medienbearbeitung (Grafik, Foto, Video)</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.medien_bearbeitung }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Linux</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.linux }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Roboter bauen/programmieren</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.roboter }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Löten</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.loeten }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Elektronik</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.elektronik }}
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row radios">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <label>Wearables (Elektronik + Nähen)</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    {{ form.wearables }}
+                                </div>
+                            </div>
+                        </div>           
+                        <div class="row freitext">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    {{ form.freitext }}
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         <button class="btn btn-info btn-block" type="submit" value="Anmelden">Anmelden</button>
                         </form>
                     </div>

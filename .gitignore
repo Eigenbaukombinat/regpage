@@ -5,3 +5,9 @@ static/
 db.sqlite3
 register/__pycache__/**
 hackaday/__pycache__/**
+bin/
+include/
+lib/
+local/
+pip-selfcheck.json
+share/
