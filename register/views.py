@@ -42,7 +42,7 @@ def register(request):
                 u'''Liebe(r) %s,
 
 Deine Registrierung für {JUNGHACKER} - Programmieren für Kids 
-am 28. Januar 2017 war erfolgreich! Wir werden uns in den nächsten 
+am 25. März 2017 war erfolgreich! Wir werden uns in den nächsten 
 Wochen bei dir melden und dir deine Teilnahme bestätigen. Falls wir 
 zu viele Anmeldungen bekommen, werden wir leider nicht alle 
 berücksichtigen können.
