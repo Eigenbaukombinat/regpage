@@ -44,7 +44,18 @@ def register(request):
        
         submitted = attendee.submitted_date.ctime()
         message ='Ein neuer Teilnehmer hat sich am ' + submitted + ' angemeldet. Name: ' + attendee.firstname + ' ' + attendee.lastname + ' Email: ' + attendee.email + ' Alter: %i' % attendee.age  
-
+        message += '''Umfrage:
+        
+coding_einsteiger: ''' + attendee.coding_einsteiger + '''
+coding_fortgeschritten: ''' + attendee.coding_fortgeschritten + '''
+medien_bearbeitung: ''' + attendee.medien_bearbeitung + '''
+linux: ''' + attendee.linux + '''
+roboter: ''' + attendee.roboter + '''
+loeten: ''' + attendee.loeten + '''
+elektronik: ''' + attendee.elektronik + '''
+wearables: ''' + attendee.wearables + '''
+freitext:
+''' + attendee.freitext
         try:
             send_mail(
                 'Deine Anmeldung zu JUNGHACKER - Programmieren fuer Kids',
