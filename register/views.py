@@ -44,7 +44,9 @@ def register(request):
        
         submitted = attendee.submitted_date.ctime()
         message ='Ein neuer Teilnehmer hat sich am ' + submitted + ' angemeldet. Name: ' + attendee.firstname + ' ' + attendee.lastname + ' Email: ' + attendee.email + ' Alter: %i' % attendee.age  
-        message += '''Umfrage:
+        message += '''
+
+Umfrage:
         
 coding_einsteiger: ''' + attendee.coding_einsteiger + '''
 coding_fortgeschritten: ''' + attendee.coding_fortgeschritten + '''
@@ -54,6 +56,7 @@ roboter: ''' + attendee.roboter + '''
 loeten: ''' + attendee.loeten + '''
 elektronik: ''' + attendee.elektronik + '''
 wearables: ''' + attendee.wearables + '''
+
 freitext:
 ''' + attendee.freitext
         try:
