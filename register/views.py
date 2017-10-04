@@ -65,10 +65,8 @@ freitext:
                 u'''Liebe(r) %s,
 
 Deine Registrierung für {JUNGHACKER} - Programmieren für Kids 
-am 23. September 2017 war erfolgreich! Wir werden uns in den nächsten 
-Wochen bei dir melden und dir deine Teilnahme bestätigen. Falls wir 
-zu viele Anmeldungen bekommen, werden wir leider nicht alle 
-berücksichtigen können.
+war erfolgreich! Bitte rufe deine E-Mails in den Tagen vor der Veranstaltung
+regelmäßig ab, damit du über eventuelle Änderungen bescheid weisst.
 
 
 Liebe Grüße, 
