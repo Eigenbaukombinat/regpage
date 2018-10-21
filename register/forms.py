@@ -4,11 +4,11 @@ from .models import *
 
 class AttendeeForm(forms.ModelForm):
     '''form for Attendee model'''
-    
+
     class Meta:
         model = Attendee
         fields = ['firstname','lastname','email','age',
-                  'coding_einsteiger', 
+                  'coding_einsteiger',
                   'coding_fortgeschritten',
                   'medien_bearbeitung',
                   'linux',
@@ -31,6 +31,6 @@ class AttendeeForm(forms.ModelForm):
             'elektronik': forms.RadioSelect(),
             'wearables': forms.RadioSelect(),
             'freitext': forms.Textarea(attrs={
-                'class':'form-control input-sm', 'placeholder':'Platz für weitere Wünsche, Anregungen und Kritik…'}),
+                'class':'form-control input-sm', 'placeholder':'Hier ist Platz für weiteres…'})
         }
-        
+
