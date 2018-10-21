@@ -31,6 +31,6 @@ class AttendeeForm(forms.ModelForm):
             'elektronik': forms.RadioSelect(),
             'wearables': forms.RadioSelect(),
             'freitext': forms.Textarea(attrs={
-                'class':'form-control input-sm', 'placeholder':'Hier ist Platz für weiteres…'})
+                'class':'form-control input-sm', 'placeholder':'Hier ist Platz für weiteres…'}),
         }
 
