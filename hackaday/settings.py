@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from .secrets import *
 
 ##  Specify Email config ##
 
@@ -51,13 +52,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!lli8zr=(u7$xsn@pa)jvf_8f^^i%+q$wuz8x2@2t**9t!iq*1'
+#SECRET_KEY = '!lli8zr=(u7$xsn@pa)jvf_8f^^i%+q$wuz8x2@2t**9t!iq*1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 USE_X_FORWARDED_HOST = True
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['app.junghacker.de']
+ALLOWED_HOSTS = ['app.junghacker.de', 'localhost']
 
 
 # Application definition

@@ -11,3 +11,4 @@ lib/
 local/
 pip-selfcheck.json
 share/
+hackaday/secrets.py
