@@ -1,6 +1,6 @@
 #coding:utf8
 from django.shortcuts import render
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError, EmailMessage
 import datetime
 from .models import *
 from .forms import *
@@ -59,10 +59,8 @@ wearables: ''' + attendee.wearables + '''
 
 freitext:
 ''' + attendee.freitext
-        try:
-            send_mail(
-                'Deine Anmeldung zu JUNGHACKER - Programmieren fuer Kids',
-                u'''Liebe(r) %s,
+        
+        reply_msg = u'''Liebe(r) %s,
 
 Deine Registrierung für {JUNGHACKER} - Programmieren für Kids 
 war erfolgreich! Bitte rufe deine E-Mails in den Tagen vor der Veranstaltung
@@ -72,11 +70,14 @@ regelmäßig ab, damit du über eventuelle Änderungen bescheid weisst.
 Liebe Grüße, 
 
 Dein Team von {JUNGHACKER} – Programmieren für Kids.
-''' % attendee.firstname,
+''' % attendee.firstname
+        try:
+            EmailMessage(
+                'Deine Anmeldung zu JUNGHACKER - Programmieren fuer Kids',
+                reply_msg,
                     SENDER_MAIL,
                     [attendee.email],
-                    fail_silently=False,
-                    )
+                    reply_to=['info@junghacker.de']).send(fail_silently=False)
             send_mail(
                     'JUNGHACKER anmeldung',
                     message,
